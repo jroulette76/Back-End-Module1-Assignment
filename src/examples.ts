@@ -39,6 +39,6 @@ const getServiceStatus = (uptimePercentage: number): string => {
 
 // Example usage
 const uptime: number = calculateUptime(720, 2); // 720 hours in a month, 2 hours downtime
-const servicestatus: string = getServiceStatus(uptime);
+const serviceStatus: string = getServiceStatus(uptime);
 
-console.log(`Uptime: ${uptime}%, Status: ${servicestatus}`);
+console.log(`Uptime: ${uptime}%, Status: ${serviceStatus}`);
