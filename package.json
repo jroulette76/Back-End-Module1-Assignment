@@ -1,0 +1,27 @@
+{
+  "name": "back-end-demo-module-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+     "scripts": {
+        "start": "ts-node src/server.ts",
+        "build": "tsc"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jroulette76/Back-end-Demo-Module-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jroulette76/Back-end-Demo-Module-1/issues"
+  },
+  "homepage": "https://github.com/jroulette76/Back-end-Demo-Module-1#readme",
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2"
+  }
+}
