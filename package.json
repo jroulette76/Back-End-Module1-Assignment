@@ -1,5 +1,5 @@
 {
-  "name": "back-end-demo-module-1",
+  "name": "Back-End-Module1-Assignment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jroulette76/Back-end-Demo-Module-1.git"
+    "url": "git+https://github.com/jroulette76/Back-End-Module1-Assignment.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/jroulette76/Back-end-Demo-Module-1/issues"
+    "url": "https://github.com/jroulette76/Back-End-Module1-Assignment/issues"
   },
-  "homepage": "https://github.com/jroulette76/Back-end-Demo-Module-1#readme",
+  "homepage": "https://github.com/jroulette76/Back-End-Module1-Assignment#readme",
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^22.20.2",
