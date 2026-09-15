@@ -1,6 +1,6 @@
 // import the express application and type definition
 import express, { Express } from "express";
-import { calculatePortfolioPerformance, PortfolioPerformance } from "./portfolio/portfolioPerformance";
+import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
 
 // initialize the express application
 const app: Express = express();
@@ -31,6 +31,25 @@ app.get("/api/v1/health", (req, res) => {
     };
 
     res.json(healthData);
+});
+
+/**
+ * Portfolio performance endpoint
+ */
+app.get("/api/v1/portfolio/performance", (req, res) => {
+    const initialInvestment = Number(req.query.initialInvestment);
+
+    const currentValue = Number(req.query.currentValue);
+    
+    // Basic validation
+    if (isNaN(initialInvestment) || isNaN(currentValue)) {
+        return res.status(400).json({
+            error: "initialInvestment and currentValue must be valid numbers."
+        });
+    }
+
+    const result = calculatePortfolioPerformance(initialInvestment, currentValue);
+    res.json(result);
 });
 
 // export app and server for testing
