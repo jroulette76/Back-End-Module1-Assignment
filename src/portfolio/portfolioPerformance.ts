@@ -7,7 +7,7 @@ interface PortfolioPerformance {
     initialInvestment: number;
     currentValue: number;
     profitOrLoss: number;
-    percentChange: number;
+    percentageChange: number;
     performanceSummary: string;
 }
 
@@ -29,4 +29,24 @@ const getPerformanceSummary = (percentageChange: number): string => {
         default:
             return "Significant loss. Review your portfolio strategy.";
     }
+};
+
+/**
+ * Calculates the performance of a financial portfolio based on the initial investment
+ * and current value. Produces profit/loss, percentage change, and a performance summary output.
+ */
+const calculatePortfolioPerformance = (initialInvestment: number, currentValue: number): PortfolioPerformance => {
+    const profitOrLoss = currentValue - initialInvestment;
+
+    const percentageChange = (profitOrLoss / initialInvestment) * 100;
+
+    const performanceSummary = getPerformanceSummary(percentageChange);
+
+    return {
+        initialInvestment,
+        currentValue,
+        profitOrLoss,
+        percentageChange,
+        performanceSummary
+    };
 };
