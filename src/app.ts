@@ -1,5 +1,6 @@
 // import the express application and type definition
 import express, { Express } from "express";
+import { calculatePortfolioPerformance, PortfolioPerformance } from "./portfolio/portfolioPerformance";
 
 // initialize the express application
 const app: Express = express();

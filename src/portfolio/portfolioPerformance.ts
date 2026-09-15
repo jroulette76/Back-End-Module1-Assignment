@@ -3,7 +3,7 @@
  * calculatePortfolioPerformance function.
  */
 
-interface PortfolioPerformance {
+export interface PortfolioPerformance {
     initialInvestment: number;
     currentValue: number;
     profitOrLoss: number;
@@ -14,7 +14,7 @@ interface PortfolioPerformance {
 /**
  * Determines the performance summary message based on the percentage change.
  */
-const getPerformanceSummary = (percentageChange: number): string => {
+export const getPerformanceSummary = (percentageChange: number): string => {
     switch (true) {
         case percentageChange >= 30:
             return "Excellent performance! Your investments are doing great.";
@@ -35,7 +35,7 @@ const getPerformanceSummary = (percentageChange: number): string => {
  * Calculates the performance of a financial portfolio based on the initial investment
  * and current value. Produces profit/loss, percentage change, and a performance summary output.
  */
-const calculatePortfolioPerformance = (initialInvestment: number, currentValue: number): PortfolioPerformance => {
+export const calculatePortfolioPerformance = (initialInvestment: number, currentValue: number): PortfolioPerformance => {
     const profitOrLoss = currentValue - initialInvestment;
 
     const percentageChange = (profitOrLoss / initialInvestment) * 100;
