@@ -24,7 +24,7 @@ export const getPerformanceSummary = (percentageChange: number): string => {
             return "Modest gain. Your portfolio is growing slowly.";
         case percentageChange === 0:
             return "No change. Your portfolio is holding steady.";
-        case percentageChange > -10:
+        case percentageChange >= -10:
             return "Minor loss. Stay calm and review your options.";
         default:
             return "Significant loss. Review your portfolio strategy.";
