@@ -44,4 +44,18 @@ describe("calculatePortfolioPerformance", () => {
         expect(result.performanceSummary).toBe("Modest gain. Your portfolio is growing slowly.")
     });
 
+    it("should return a Minor loss for a 10% decrease", () => {
+        // Arrange
+        const initialInvestment = 10000;
+        const currentValue = 9000;
+
+        // Act
+        const result = calculatePortfolioPerformance(initialInvestment, currentValue);
+        
+        // Assert
+        expect(result.profitOrLoss).toBe(-1000);
+        expect(result.percentageChange).toBe(-10);
+        expect(result.performanceSummary).toBe("Minor loss. Stay calm and review your options.")
+    });
+
 });
