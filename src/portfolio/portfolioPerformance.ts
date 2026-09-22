@@ -32,8 +32,9 @@ export const getPerformanceSummary = (percentageChange: number): string => {
 };
 
 /**
- * Calculates the performance of a financial portfolio based on the initial investment
- * and current value. Produces profit/loss, percentage change, and a performance summary output.
+ * Calculates portfolio performance using the initial investment
+ * and current value to produce profit/loss, percentage change,
+ * and a summary message.
  */
 export const calculatePortfolioPerformance = (initialInvestment: number, currentValue: number): PortfolioPerformance => {
     const profitOrLoss = currentValue - initialInvestment;

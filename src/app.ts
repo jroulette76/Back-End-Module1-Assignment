@@ -34,7 +34,8 @@ app.get("/api/v1/health", (req, res) => {
 });
 
 /**
- * Portfolio performance endpoint
+ * Portfolio performance endpoint that calculates profit/loss,
+ * percentage change, and a summary based on investment values.
  */
 app.get("/api/v1/portfolio/performance", (req, res) => {
     const initialInvestment = Number(req.query.initialInvestment);
