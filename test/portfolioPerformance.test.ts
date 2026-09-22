@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import { calculatePortfolioPerformance } from "../src/portfolio/portfolioPerformance";
 
 describe("calculatePortfolioPerformance", () => {

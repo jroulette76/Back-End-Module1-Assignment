@@ -48,6 +48,13 @@ app.get("/api/v1/portfolio/performance", (req, res) => {
         });
     }
 
+    // Prevents negative values
+    if (initialInvestment < 0 || currentValue < 0) {
+        return res.status(400).json({
+            error: "Values cannot be negative."
+        });
+    }
+
     const result = calculatePortfolioPerformance(initialInvestment, currentValue);
     res.json(result);
 });
