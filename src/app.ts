@@ -1,5 +1,6 @@
 // import the express application and type definition
 import express, { Express } from "express";
+import { calculatePortfolioPerformance } from "./portfolio/portfolioPerformance";
 
 // initialize the express application
 const app: Express = express();
@@ -30,6 +31,33 @@ app.get("/api/v1/health", (req, res) => {
     };
 
     res.json(healthData);
+});
+
+/**
+ * Portfolio performance endpoint that calculates profit/loss,
+ * percentage change, and a summary based on investment values.
+ */
+app.get("/api/v1/portfolio/performance", (req, res) => {
+    const initialInvestment = Number(req.query.initialInvestment);
+
+    const currentValue = Number(req.query.currentValue);
+    
+    // Basic validation
+    if (isNaN(initialInvestment) || isNaN(currentValue)) {
+        return res.status(400).json({
+            error: "initialInvestment and currentValue must be valid numbers."
+        });
+    }
+
+    // Prevents negative values
+    if (initialInvestment < 0 || currentValue < 0) {
+        return res.status(400).json({
+            error: "Values cannot be negative."
+        });
+    }
+
+    const result = calculatePortfolioPerformance(initialInvestment, currentValue);
+    res.json(result);
 });
 
 // export app and server for testing
